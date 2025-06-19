@@ -217,10 +217,10 @@ pip install -r requirements.txt
 * Final merge handled by Marion after review
 
 ```bash
-git checkout -b task2-marion
+git checkout -b 
 git add .
 git commit -m "Final task2 with screenshot and graph"
-git push origin task2-marion
+git push origin 
 ```
 
 ---
