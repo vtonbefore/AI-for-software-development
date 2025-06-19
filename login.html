@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - AI Testing Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input:invalid {
+            border-color: #e74c3c;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .demo-credentials {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .demo-credentials h3 {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .demo-credentials p {
+            color: #666;
+            font-size: 12px;
+            margin: 2px 0;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .success-page {
+            display: none;
+            text-align: center;
+        }
+
+        .success-page h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .success-page p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .logout-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .logout-button:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div id="loginForm">
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Please sign in to your account</p>
+            </div>
+
+            <div class="demo-credentials">
+                <h3>Demo Credentials for Testing:</h3>
+                <p><strong>Username:</strong> admin</p>
+                <p><strong>Password:</strong> password123</p>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="login-button" id="loginButton">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="forgot-password">
+                <a href="#" onclick="showMessage('Password reset functionality not implemented in demo', 'error')">Forgot your password?</a>
+            </div>
+        </div>
+
+        <div id="successPage" class="success-page">
+            <h2>✅ Login Successful!</h2>
+            <p>Welcome to the secure area. Your login has been authenticated successfully.</p>
+            <p><strong>Current URL:</strong> <span id="currentUrl"></span></p>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Valid credentials for testing
+        const validCredentials = {
+            'admin': 'password123',
+            'user': 'test456',
+            'testuser': 'demo789'
+        };
+
+        // Track login attempts for testing analysis
+        let loginAttempts = [];
+
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            // Auto-hide success messages after 3 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function recordAttempt(username, password, success, reason) {
+            const attempt = {
+                timestamp: new Date().toISOString(),
+                username: username,
+                passwordLength: password.length,
+                success: success,
+                reason: reason,
+                userAgent: navigator.userAgent.substring(0, 50)
+            };
+            loginAttempts.push(attempt);
+            
+            // Store in sessionStorage for testing analysis
+            sessionStorage.setItem('loginAttempts', JSON.stringify(loginAttempts));
+        }
+
+        function validateLogin(username, password) {
+            // Check for empty fields
+            if (!username.trim() || !password.trim()) {
+                return { valid: false, reason: 'Username and password are required' };
+            }
+
+            // Check for valid credentials
+            if (validCredentials[username] === password) {
+                return { valid: true, reason: 'Valid credentials' };
+            }
+
+            // Check if username exists but password is wrong
+            if (validCredentials.hasOwnProperty(username)) {
+                return { valid: false, reason: 'Invalid password' };
+            }
+
+            // Username doesn't exist
+            return { valid: false, reason: 'Invalid username' };
+        }
+
+        function login(username, password) {
+            const validation = validateLogin(username, password);
+            
+            recordAttempt(username, password, validation.valid, validation.reason);
+
+            if (validation.valid) {
+                // Hide login form and show success page
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('successPage').style.display = 'block';
+                document.getElementById('currentUrl').textContent = window.location.href + '?logged_in=true';
+                
+                // Add logged_in parameter to URL for testing
+                if (!window.location.search.includes('logged_in')) {
+                    window.history.pushState({}, '', window.location.href + '?logged_in=true&user=' + encodeURIComponent(username));
+                }
+                
+                return true;
+            } else {
+                showMessage(validation.reason, 'error');
+                return false;
+            }
+        }
+
+        function logout() {
+            // Show login form and hide success page
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('successPage').style.display = 'none';
+            
+            // Clear form
+            document.getElementById('loginFormElement').reset();
+            document.getElementById('message').style.display = 'none';
+            
+            // Remove logged_in parameter from URL
+            window.history.pushState({}, '', window.location.pathname);
+        }
+
+        // Form submission handler
+        document.getElementById('loginFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Add loading state
+            const button = document.getElementById('loginButton');
+            const originalText = button.textContent;
+            button.textContent = 'Signing In...';
+            button.disabled = true;
+            
+            // Simulate network delay for realistic testing
+            setTimeout(() => {
+                login(username, password);
+                
+                // Reset button
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 500);
+        });
+
+        // Expose functions for testing
+        window.testFunctions = {
+            login: login,
+            logout: logout,
+            getLoginAttempts: () => JSON.parse(sessionStorage.getItem('loginAttempts') || '[]'),
+            clearAttempts: () => {
+                loginAttempts = [];
+                sessionStorage.removeItem('loginAttempts');
+            },
+            isLoggedIn: () => window.location.search.includes('logged_in=true')
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load existing attempts from sessionStorage
+            const storedAttempts = sessionStorage.getItem('loginAttempts');
+            if (storedAttempts) {
+                loginAttempts = JSON.parse(storedAttempts);
+            }
+        });
+    </script>
+</body>
+</html>
