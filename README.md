@@ -2,12 +2,6 @@
 
 This repository contains the implementation of AI-powered software engineering tasks, including code completion and automated testing.
 
-## contributors
-- [@baatiroba2](bqunyo@gmail.com) - developer
-- [@michael-wambua](slymike63@gmail.com) - developer
-- [@vtonbefore](beforevton@gmail.com) - developer
-
-
 * 🔍 Task-by-task summary
 * 📊 Graphs (✅ already created)
 * 📸 Screenshot (✅ simulated earlier)
@@ -106,6 +100,24 @@ Each bar represents a test case status:
 
 * Green = ✅ Pass
 * Red = ❌ Fail
+## 📈 Part 3: Predictive Analytics for Resource Allocation
+
+### 🎯 Objective:
+Use AI (Random Forest) to predict issue priority from a Kaggle dataset and evaluate model performance using standard classification metrics.
+
+---
+
+### 📊 Exploratory Data Analysis (EDA)
+A summary of patterns in the dataset was visualized before training. Below is the screenshot shared by the teammate who worked on this section:
+
+![EDA Analysis](eda_analysis_teammate.png)
+
+---
+
+### 🤖 Model Performance
+Random Forest model trained and evaluated using Accuracy and F1-Score. Results shared via screenshot:
+
+![Model Performance](model_performance_teammate.png)
 
 ---
 
@@ -217,10 +229,10 @@ pip install -r requirements.txt
 * Final merge handled by Marion after review
 
 ```bash
-git checkout -b task2-marion
+git checkout -b
 git add .
 git commit -m "Final task2 with screenshot and graph"
-git push origin task2-marion
+git push origin 
 ```
 
 ---
@@ -228,10 +240,13 @@ git push origin task2-marion
 ## 🎓 Final Reflection
 
 This project showed how AI is:
-
+## collaborators
 * A coding partner (GitHub Copilot)
 * A test engineer (Selenium scripts)
 * A decision-maker (ML predictions)
 * A responsible system (Ethical checks)
+- [@baatiroba2](bqunyo@gmail.com) - developer
+- [@michael-wambua](slymike63@gmail.com) - developer
+- [@vtonbefore](beforevton@gmail.com) - developer
 
 All deliverables were completed with code, screenshots, graphs, and real results.
