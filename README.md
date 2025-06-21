@@ -110,14 +110,14 @@ Use AI (Random Forest) to predict issue priority from a Kaggle dataset and evalu
 ### 📊 Exploratory Data Analysis (EDA)
 A summary of patterns in the dataset was visualized before training. Below is the screenshot shared by the teammate who worked on this section:
 
-![EDA Analysis](eda_analysis_teammate.png)
+![EDA Analysis](eda_analysis.png)
 
 ---
 
 ### 🤖 Model Performance
 Random Forest model trained and evaluated using Accuracy and F1-Score. Results shared via screenshot:
 
-![Model Performance](model_performance_teammate.png)
+![Model Performance](model_performance.png)
 
 ---
 
