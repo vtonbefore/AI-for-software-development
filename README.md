@@ -108,6 +108,24 @@ Each bar represents a test case status:
 * Red = ❌ Fail
 
 ---
+## 📈 Part 3: Predictive Analytics for Resource Allocation
+
+### 🎯 Objective:
+Use AI (Random Forest) to predict issue priority from a Kaggle dataset and evaluate model performance using standard classification metrics.
+
+---
+
+### 📊 Exploratory Data Analysis (EDA)
+A summary of patterns in the dataset was visualized before training. Below is the screenshot shared by the teammate who worked on this section:
+
+![EDA Analysis](eda_analysis.png)
+
+---
+
+### 🤖 Model Performance
+Random Forest model trained and evaluated using Accuracy and F1-Score. Results shared via screenshot:
+
+![Model Performance](model_performance.png)
 
 ### 🤖 How AI Helped:
 
@@ -233,5 +251,10 @@ This project showed how AI is:
 * A test engineer (Selenium scripts)
 * A decision-maker (ML predictions)
 * A responsible system (Ethical checks)
+## contributors
+- [@baatiroba2](bqunyo@gmail.com) - developer
+- [@michael-wambua](slymike63@gmail.com) - developer
+- [@vtonbefore](beforevton@gmail.com) - developer
+
 
 All deliverables were completed with code, screenshots, graphs, and real results.
