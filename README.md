@@ -93,7 +93,7 @@ Test a login page for both valid and invalid credentials and take a screenshot o
 ---
 ### ❌ Invalid Login Attempt Screenshot
 
-![Invalid Login Test](screen_shot.PNG)
+![Invalid Login Test](screen shot.PNG)
 
 ### 📊 Graph – Test Results
 
