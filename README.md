@@ -91,6 +91,9 @@ Test a login page for both valid and invalid credentials and take a screenshot o
 > Captured using `driver.save_screenshot()` during test run.
 
 ---
+### ❌ Invalid Login Attempt Screenshot
+
+![Invalid Login Test](screenshot.PNG)
 
 ### 📊 Graph – Test Results
 
