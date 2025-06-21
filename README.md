@@ -86,7 +86,7 @@ Test a login page for both valid and invalid credentials and take a screenshot o
 
 ### 🖼 Screenshot
 
-![Login Screenshot](screenshot.png)
+![Login Screenshot](screenshot.PNG)
 
 > Captured using `driver.save_screenshot()` during test run.
 
